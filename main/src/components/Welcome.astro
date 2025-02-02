@@ -1,30 +1,27 @@
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
-
-let items=[]
-for (let i=0;i<20;i++){items.push(i)}
+import { ClientRouter } from "astro:transitions";
+import astroLogo from "../assets/astro.svg";
+import background from "../assets/background.svg";
+import Card from "./card.astro";
+let items = [
+	"Tailwandとやら面白いね",
+	"モダンなUIってなんだろう.とりあえず影とまるみつけとけばいいんじゃね",
+];
+for (let i = 0; i < 0; i++) {
+	items.push(String(i));
+}
 ---
 
 <div id="container">
-	<main class="p-10  bg-slate-500">
-		<div class=" bg-slate-100 break-inside-avoid p-8 m-2">
+	<main class="p-10 bg-slate-500">
+		<div class="bg-slate-100 break-inside-avoid p-8 m-2">
 			<h1 class="text-lg">rakugakichoo</h1>
 		</div>
-		<div class=" bg-slate-100 columns-3 space-x-0 p-8 m-2">
-			<div class="aspect-square shadow-2xl rounded-2xl break-inside-avoid">
-				Tailwindとやら、面白いね
-			</div>
-
-			{items.map((i)=>(
-				<div class="aspect-square shadow-2xl rounded-2xl break-inside-avoid">{i}</div>
-			)
-			)}
+		<div class="bg-slate-100 columns-3 space-x-0 p-8 m-2">
+			{items.map((i) => <Card content={i} />)}
 		</div>
 
 	</main>
-
 </div>
 
-<style>
-</style>
+<style></style>
